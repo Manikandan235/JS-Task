@@ -1,0 +1,12 @@
+/* Custom styles */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://source.unsplash.com/1600x900/?technology') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: 'Segoe UI', sans-serif;
+}
+
