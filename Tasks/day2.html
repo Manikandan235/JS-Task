@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        do{
+            console.log("1.add");
+            console.log("2.subtract");
+            console.log("3.multiply");
+            console.log("4.divide");
+            console.log("5.exit");
+            let x = parseInt(prompt("Enter 1 value: "));
+            let y = parseInt(prompt("Enter 2 value: "));
+            let ch = parseInt(prompt("Enter your choice: "));
+            let result;
+            switch(ch){
+                case 1:
+                    result=x+y;
+                    console.log(result);
+                    break;
+                case 2:
+                    result=x-y;
+                    console.log(result);
+                    break;
+                case 3:
+                    result=x*y;
+                    console.log(result);
+                    break;
+                case 4:
+                    result=x/y;
+                    console.log(result);
+                    break;
+                default:
+                    console.log("invalid choice");
+            }
+        }while(ch<5&&ch>0)
+    </script>
+</body>
+</html>
