@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="id"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <script>
+        document.querySelector("#id").innerText = "queryid"
+        document.querySelectorAll(".con")[0].innerText = "queryallselect"
+        document.getElementById("id").innerText = "this is getelementbyid()"
+        document.getElementById("id").style.color = "red"
+        let res = document.getElementsByClassName("con")
+        res[0].innerText= "Hi"
+        res[0].style.color = "blue"
+        document.getElementsByClassName("con")[1].innerText= "second class"
+    </script>
+</body>
+</html>
