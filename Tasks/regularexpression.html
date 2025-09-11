@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Quantifiers specify how many times a character or group should appear
+        *
+        zero or more consitive as.it allows empty matchs to .at lest it checks once again so if not it returns("")
+                
+        +
+        unlike ?,this not allows empty matchs.insted of matching one a at time,it groups consecutive at together
+                    
+        ?
+        match zero or one at a each position.at lest it checks once again so if not it returns("")
+        */
+
+        /*defintion of modifiers: modifires changes how regex matchs
+        i->case insensitive
+        g->global match
+        m->multiline match
+        */
+
+        //defintion of metacharacter: meta charracters have special meaning in regex
+        //.->any character expect new line
+        //d->digit(0-9)
+        //w->word character
+        //s->whitespace
+        //^->start of starting/line
+        //$->
+
+        let text= "aaaba";
+        let pat1 = /\a+/g;
+        let result = text.match(pat1);
+        console.log(result);
+
+        let sentence = "javascript programming language \n javascript programming language";
+        let pat2 = /\programming+/igm;
+        let result2 = sentence.match(pat2);
+        console.log(result2);
+
+        let digitchar = "001js";
+        let pat3 =/\d+/g;
+        let result3 = digitchar.match(pat3);
+        console.log(result3)
+
+        let texts = "hi kavikuyil";
+        let pat4 = /(\w+)\s+(\w+)/;
+        let result4 = texts.match(pat4);
+        console.log(result4);
+        console.log(result4[0]);
+        console.log(result4[1]);
+        console.log(result4[2]);
+
+        let fruits = "apple banana apple grape";
+        let pat5 = /(apple)/;
+        let result5 = fruits.match(pat5);
+        console.log(result5[0]);
+        console.log(result5[1]);
+
+        let pat6 = /apple/g;
+        let result6 = fruits.replace(pat6,"orange");
+        console.log(result6);
+
+        let pat7 = /\s+/;
+        let result7 = fruits.split(pat7);
+        console.log(result7);
+
+    </script>
+</body>
+</html>
