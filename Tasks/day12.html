@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //set is a colletion of unique values, it automatically remove dub
+        //syntax: let myset = new Set([itrable])
+
+        let email = new Set([]);
+        email.add("js@gmail.com");
+        email.add("java@gmail.com");
+        email.add("py@gmail.com");
+        console.log(email);
+        for(let mailid of email){
+            console.log(mailid);
+        }
+        email.forEach(x=>{
+            console.log(x);
+        });
+        email.delete("py@gmail.com");
+        console.log(email);
+        email.clear();
+        console.log(email);
+
+        let admin = new Set(["write","read","delete"]);
+        let user = new Set(["read"]);
+        function haspermission(role,granted){
+            return role.has(granted);
+        }
+        console.log(haspermission(admin,"delete"));
+        console.log(haspermission(user,"delete"));
+
+        let setA = new Set([1,2,3,4,5,1,6]);
+        let setB = new Set([6,7,8,9,10,1]);
+        let union = new Set([...setA,...setB]);
+        console.log(union);
+        let intersection = new Set([...setA].filter(x=>setB.has(x)));
+        console.log(intersection);
+        let diff = new Set([...setA].filter(x=>!setB.has(x)));
+        console.log(diff)
+
+        let fruits = new Set(["apple","banana"]);
+        let entries = fruits.entries();
+        for(let entry of entries){
+            console.log(entry);
+        }
+
+        // WeakMaps
+        // A javascript WeakMap is a collection of key/value pairs.
+        // where the keys must be objects.
+
+        let user1 = {name:"java"};
+        let user2 = {name:"python"};
+        let mymap = new Map();
+        mymap.set(user1,"welcome to java");
+        mymap.set(user2,"welcome to python");
+        console.log(mymap);
+        // for(let map of mymap){
+        //     console.log(map);
+        // }
+    </script>
+</body>
+</html>
