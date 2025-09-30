@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider{
+            height: 200px;
+            width: 200px;
+            text-align: center;
+        }
+        img{
+            width: 200px;
+            hie
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <img src="image1.png" alt="image1" id="imagebox">
+    </div>
+    <button id="next">Next</button>
+    <button id="previous">previous</button>
+    <script>
+        let numbers = ["image1.png","image2.jfif","image3.jfif"];
+        let currentIndex = 0;
+        let numberbox = document.getElementById("imagebox");
+        let nextBtn = document.getElementById("next");
+        let preBtn = document.getElementById("previous");
+        nextBtn.addEventListener("click",() => {
+            currentIndex = (currentIndex + 1) % numbers.length;
+            numberbox.src = numbers[currentIndex];
+        });
+        preBtn.addEventListener("click",() => {
+            currentIndex = (currentIndex - 1 + numbers.length) % numbers.length;
+            numberbox.src = numbers[currentIndex];
+        });
+    </script>
+</body>
+</html>
