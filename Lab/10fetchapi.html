@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fetch API - User Dashboard</title>
+</head>
+<body>
+  <h2>User Information Dashboard</h2>
+  <button onclick="loadUsers()">Load Users</button>
+  <p id="status"></p>
+  <div id="userData"></div>
+
+  <script>
+    function loadUsers() {
+      const status = document.getElementById('status');
+      const output = document.getElementById('userData');
+
+      status.textContent = 'Loading...';
+      output.innerHTML = '';
+
+      fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(data => {
+          status.textContent = '';
+          let userList = '<ul>';
+          data.forEach(user => {
+            userList += `<li>${user.name} - ${user.email} - ${user.address.city}</li>`;
+          });
+          userList += '</ul>';
+          output.innerHTML = userList;
+        })
+        .catch(() => {
+          status.textContent = 'Failed to load data.';
+        });
+    }
+  </script>
+</body>
+</html>
